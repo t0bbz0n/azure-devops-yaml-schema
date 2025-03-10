@@ -23,7 +23,7 @@ Use `checkout` to configure how the pipeline checks out source code.
 ```yaml
 steps:
 - checkout: string # Required as first property. Configures checkout for the specified repository.
-  clean: true | false # If true, run git clean -ffdx followed by git reset --hard HEAD before fetching.
+  clean: boolean # If true, run git clean -ffdx followed by git reset --hard HEAD before fetching.
   fetchDepth: string # Depth of Git graph to fetch.
   fetchFilter: string # Filter Git history.
   fetchTags: string # Set to 'true' to sync tags when fetching the repo, or 'false' to not sync tags. See remarks for the default behavior.
@@ -33,7 +33,7 @@ steps:
   path: string # Where to put the repository. The root directory is $(Pipeline.Workspace).
   sparseCheckoutDirectories: string # Directories for sparse checkout in cone mode and prioritized over sparseCheckoutPatterns if both properties are provided.
   sparseCheckoutPatterns: string # Patterns for sparse checkout in non-cone mode that are ignored if sparseCheckoutDirectories is provided.
-  workspaceRepo: true | false # When true, use the repository root directory as the default working directory for the pipeline. The default is false.
+  workspaceRepo: boolean # When true, use the repository root directory as the default working directory for the pipeline. The default is false.
   condition: string # Evaluate this condition expression to determine whether to run this task.
   continueOnError: boolean # Continue running even on failure?
   displayName: string # Human-readable name for the task.
